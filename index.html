@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Registration System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>ONLINE REGISTRATION SYSTEM</h1>
+    <div class="container">
+        <!-- Left Table -->
+        <div class="left-table">
+            <h2>All Available Courses</h2>
+            <table id="available-courses">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Credit Hrs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Introduction to Computing Lab</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Introduction to Computing</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Computer Programming Lab</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Computer Programming</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Object Oriented Programming Lab</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Object Oriented Programming</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Data Structure and Algorithm Lab</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Data Structure and Algorithm</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Software Engineering Lab</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Software Engineering</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Database Management Systems Lab</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Database Management Systems</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Discrete Structures</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Buttons -->
+        <div class="buttons">
+            <button>Add</button>
+            <button>Remove</button>
+        </div>
+
+        <!-- Right Table -->
+        <div class="right-table">
+            <h2>Register Course Queue</h2>
+            <table id="registered-courses">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Credit Hrs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Queue will be displayed here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Register Button with onClick -->
+    <div class="register-button">
+        <button>Register</button>
+        <button id="viewData">View Data</button>
+    </div>
+
+    <script src="App.js"></script>
+</body>
+
+</html>
