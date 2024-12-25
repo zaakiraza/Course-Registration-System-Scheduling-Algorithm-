@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration</title>
+    <style>
+        /* Retain the existing styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1f1f1f;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 20px 0;
+            color: #ffffff;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 90%;
+            margin-top: 20px;
+        }
+
+        .left-table,
+        .right-table {
+            width: 40%;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            background-color: #1f1f1f;
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        th,
+        td {
+            border: 1px solid #555555;
+            text-align: center;
+            padding: 8px;
+        }
+
+        th {
+            background-color: black;
+            color: white;
+        }
+
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 20%;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 0 20px;
+            height: 65vh;
+        }
+
+        button {
+            width: 100px;
+            padding: 10px 0;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: #555555;
+        }
+
+        .register-button {
+            width: 220px;
+            display: flex;
+            justify-content: center;
+            margin: 0 0 20px 0;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .register-button button {
+            width: 100%;
+            padding: 10px 0;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .register-button button:hover {
+            background-color: #555555;
+        }
+
+        .selected {
+            background-color: #555555;
+        }
+
+        table tr {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body onload="onLoadUserPanel()">
+    <h1>ONLINE REGISTRATION SYSTEM</h1>
+    <div class="container">
+        <div class="left-table" id="left-table">
+            <h2>All Available Courses</h2>
+            <table id="courses-table">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Credit Hrs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-credit="1">
+                        <td>Introduction to Computing Lab</td>
+                        <td>1</td>
+                    </tr>
+                    <tr data-credit="3">
+                        <td>Introduction to Computing</td>
+                        <td>3</td>
+                    </tr>
+                    <tr data-credit="1">
+                        <td>Computer Programming Lab</td>
+                        <td>1</td>
+                    </tr>
+                    <tr data-credit="3">
+                        <td>Computer Programming</td>
+                        <td>3</td>
+                    </tr>
+                    <tr data-credit="1">
+                        <td>Object Oriented Programming Lab</td>
+                        <td>1</td>
+                    </tr>
+                    <tr data-credit="3">
+                        <td>Object Oriented Programming</td>
+                        <td>3</td>
+                    </tr>
+                    <tr data-credit="1">
+                        <td>Data Structure and Algorithm Lab</td>
+                        <td>1</td>
+                    </tr>
+                    <tr data-credit="3">
+                        <td>Data Structure and Algorithm</td>
+                        <td>3</td>
+                    </tr>
+                    <tr data-credit="1">
+                        <td>Software Engineering Lab</td>
+                        <td>1</td>
+                    </tr>
+                    <tr data-credit="3">
+                        <td>Software Engineering</td>
+                        <td>3</td>
+                    </tr>
+                    <tr data-credit="1">
+                        <td>Database Management Systems Lab</td>
+                        <td>1</td>
+                    </tr>
+                    <tr data-credit="3">
+                        <td>Database Management Systems</td>
+                        <td>3</td>
+                    </tr>
+                    <tr data-credit="3">
+                        <td>Discrete Structures</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="buttons" id="buttons">
+            <button id="add-button">Add</button>
+            <button id="remove-button">Remove</button>
+        </div>
+        <div class="right-table" id="right-table">
+            <h2>Register Course Queue</h2>
+            <table id="registered-courses">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Credit Hrs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="register-button" id="register-button">
+        <button id="register-btn">Register</button>
+    </div>
+
+    <script src="App.js"></script>
+</body>
+
+</html>

@@ -4,107 +4,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Registration System</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Choose Panel</title>
+    <style>
+        /* Retain the existing styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #141414;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .panel-box {
+            background-color: #1f1f1f;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        .panel-buttons {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            background-color: #333333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button.active {
+            background-color: white;
+            color: #2a2a2a;
+        }
+
+        button:hover {
+            background-color: #555555;
+        }
+
+        .form-container {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .form-container.active {
+            display: block;
+        }
+
+        .form-container input {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            width: 90%;
+            border-radius: 5px;
+            border: none;
+            background-color: #2a2a2a;
+            color: white;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: white;
+            color: #2a2a2a;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            width: 96%;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #dddddd;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>ONLINE REGISTRATION SYSTEM</h1>
-    <div class="container">
-        <!-- Left Table -->
-        <div class="left-table">
-            <h2>All Available Courses</h2>
-            <table id="available-courses">
-                <thead>
-                    <tr>
-                        <th>Course Name</th>
-                        <th>Credit Hrs</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Introduction to Computing Lab</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>Introduction to Computing</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>Computer Programming Lab</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>Computer Programming</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>Object Oriented Programming Lab</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>Object Oriented Programming</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>Data Structure and Algorithm Lab</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>Data Structure and Algorithm</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>Software Engineering Lab</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>Software Engineering</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>Database Management Systems Lab</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>Database Management Systems</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>Discrete Structures</td>
-                        <td>3</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <!-- Buttons -->
-        <div class="buttons">
-            <button>Add</button>
-            <button>Remove</button>
+    <div class="panel-box">
+        <h1>Choose Panel</h1>
+        <div class="panel-buttons">
+            <button id="student-btn" class="active" onclick="showStudentPanel()">Student Panel</button>
+            <button id="admin-btn" onclick="showAdminPanel()">Admin Panel</button>
         </div>
 
-        <!-- Right Table -->
-        <div class="right-table">
-            <h2>Register Course Queue</h2>
-            <table id="registered-courses">
-                <thead>
-                    <tr>
-                        <th>Course Name</th>
-                        <th>Credit Hrs</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Queue will be displayed here -->
-                </tbody>
-            </table>
+        <div class="form-container active" id="student-form">
+            <form id="student-login-form" onsubmit="return validateStudentLogin()">
+                <input type="text" id="student-id" placeholder="User ID" required><br>
+                <input type="password" id="student-password" placeholder="Password" required><br>
+                <input type="submit" value="Login">
+            </form>
         </div>
-    </div>
 
-    <!-- Register Button with onClick -->
-    <div class="register-button">
-        <button>Register</button>
-        <button id="viewData">View Data</button>
+        <div class="form-container" id="admin-form">
+            <form onsubmit="return validateAdminLogin()" action="adminPanel.html">
+                <input type="password" id="admin-password" placeholder="Password" required><br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
     </div>
 
     <script src="App.js"></script>

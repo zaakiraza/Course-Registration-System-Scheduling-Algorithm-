@@ -124,3 +124,36 @@ button:hover {
 table tr {
     cursor: pointer;
 }
+
+
+
+/* Login Forms */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.login-form input {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1em;
+    width: 200px;
+}
+
+.login-form button {
+    width: 100px;
+    padding: 10px 0;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.login-form button:hover {
+    background-color: #0056b3;
+}
+
