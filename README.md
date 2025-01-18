@@ -22,7 +22,7 @@ Password for student1=666<br>
 
 <b>** Details About Project **</b><br>
 It is a simple registration panel for students where students can able to regiter there courses and admin can view the data of all students.<br>
-Features of my Portal:<br>
+<b>Features of my Portal:</b><br>
 1. The limit for single student is 6-15 credi hrs.<br>
 2. Student can register only one time.<br>
 3. only admin can view the data.<br>
